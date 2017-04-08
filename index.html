@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.css" integrity="sha256-r2glH03VUY1R1G+7PwWdfL/NaTKpbInwaZFGiohbo4A=" crossorigin="anonymous" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/timeline.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha256-gL1ibrbVcRIHKlCO5OXOPC/lZz/gpdApgQAzskqqXp8=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.js" integrity="sha256-r80qU2FgO31x7HtK2BQxYOQxPb45x+eKKhzA0OrepyM=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      $('#pages').fullpage({
+        anchors: ['about', 'projects', 'education'],
+        lazyLoading: false,
+        controlArrows: false,
+        scrollingSpeed: 500,
+        navigation: true
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div id="pages">
+    <div data-menuanchor="about" class="intro section">
+      <div class="container">
+        <img src="https://avatars2.githubusercontent.com/u/6829787" class="hidden-md-down float-right col-md-4 img-fluid"></img>
+        <div class="col-md-8">
+          <h1 class="display-1">Kaioru <small>aka Keith</small></h1>
+          <hr />
+          <p>
+            <span class="highlight">Hi.</span> I'm a student and freelancer in
+            <span class="highlight">Singapore.</span> I've worked with multiple languages such as
+            <span class="highlight">Java, PHP and SQL</span> and also have experience in creating
+            <span class="highlight">Desktop and Cloud applications.</span>
+          </p>
+          <a href="https://github.com/kaioru" target="_blank"><i class="fa fa-2x fa-github" aria-hidden="true"></i></a>
+          <a href="http://steamcommunity.com/id/Keifoo/" target="_blank"><i class="fa fa-2x fa-steam" aria-hidden="true"></i></a>
+          <a href="mxxaxixlxto:kxxxeixfuxuxxxrxawrxxsx@gxmxaxilx.xxxxcoxmx" onmouseover="this.href=this.href.replace(/x/g,'');" target="_blank"><i class="fa fa-2x fa-envelope" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+    <div data-menuanchor="projects" class="section light-brown">
+      <div class="slide">
+        <div class="text-center">
+          <h1 class="display-1">Projects</h1>
+          <p>Use the <i class="fa fa-caret-left" aria-hidden="true"></i> and <i class="fa fa-caret-right" aria-hidden="true"></i> keys to navigate.</p>
+          <a class="highlight" href="#projects/retort">Retort</a>
+          <small> // </small>
+          <a class="highlight" href="#projects/deskly">Deskly</a>
+        </div>
+      </div>
+      <div data-anchor="retort" class="slide text-left">
+        <div class="container col-md-8">
+          <h1>Retort <small>Java</small></h1>
+          <p>A text command API I wrote in Java to <span class="highlight">easilly write and execute commands.</span> The standard way of having a long if-else statement to check for commands wasn't organized. Therefore, I wrote this API to <span class="highlight">streamline and standardize</span>            creating commands.</p>
+          <p>This project also make use of Java 8's Stream API and Lambdas</p>
+          <hr />
+          <a class="highlight" target="_blank" href="https://github.com/kaioru/retort">View on Github</a>
+        </div>
+      </div>
+      <div data-anchor="deskly" class="slide">
+        <div class="container col-md-8">
+          <h1>Deskly <small>Swift, C#</small></h1>
+          <p>After having the same desktop image for so long, I got bored and had to change it. But finding images for my desktop feels like a chore everytime I do it. Which is why I wrote Deskly, a <span class="highlight">random desktop image changer</span>            that pulls images from selected Subreddits on Reddit.</p>
+          <p>I collaborated with <a class="highlight" target="_blank" href="https://github.com/ddolpali">@ddolpali</a> to create the Windows port of the application and various new features.</p>
+          <hr />
+          <a class="highlight" target="_blank" href="https://github.com/deskly">View on Github</a>
+          <small> // </small>
+          <a class="highlight" target="_blank" href="https://deskly.github.io">View on Project Page</a>
+        </div>
+      </div>
+    </div>
+    <div data-menuanchor="education" class="section">
+      <div class="container">
+        <h1 class="display-1">Education</h1>
+        <ul class="timeline timeline-horizontal">
+          <li class="timeline-item">
+            <div class="timeline-badge primary"></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h1 class="timeline-title">Institution of Technical Education</h4>
+                <div class="timeline-body">
+									<p>2015-2016 <small>//</small> NITEC in Infocomm-Technology (NSA)</p>
+								</div>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-badge primary"></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h1 class="timeline-title">Ngee Ann Polytechnic</h4>
+              </div>
+              <div class="timeline-body">
+                <p>2017-current <small>//</small> Diploma in Information Technology</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>

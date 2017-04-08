@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Oswald|Raleway');
+
+body {
+  position:absolute;
+  background-color: #2d2d2d;
+  color: #d1d1d1;
+}
+
+.light-brown {
+  background-color: #baada3;
+  color: #ffffff;
+}
+
+.highlight {
+  color: #f9d740;
+}
+
+.light-brown .highlight {
+  color: #45525c;
+}
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+    background: #d1d1d1;
+}
+
+div.fp-controlArrow.fp-prev, div.fp-controlArrow.fp-next {
+    font-size: 40%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif;
+  color: #ffffff;
+}
+
+h1 small {
+  font-size: 40%;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 120%;
+}
+
+small {
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.fa {
+  padding: 0em 0.2em;
+  font-size: 150%;
+  color: inherit;
+}
