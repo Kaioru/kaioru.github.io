@@ -17,10 +17,12 @@
       $('#pages').fullpage({
         anchors: ['about', 'projects', 'education'],
         lazyLoading: false,
-        controlArrows: false,
+        controlArrows: true,
         scrollingSpeed: 500,
         navigation: true
       });
+
+      $('.fp-controlArrow').addClass('hidden-sm-down');
     });
   </script>
 </head>
@@ -68,7 +70,8 @@
       <div class="slide">
         <div class="text-center">
           <h1 class="display-1">Projects</h1>
-          <p>Use the <i class="fa fa-caret-left" aria-hidden="true"></i> and <i class="fa fa-caret-right" aria-hidden="true"></i> keys to navigate.</p>
+          <p class="hidden-sm-down">Use the <i class="fa fa-caret-left" aria-hidden="true"></i> and <i class="fa fa-caret-right" aria-hidden="true"></i> keys to navigate.</p>
+          <p class="hidden-md-up">Swipe left or right to navigate.</p>
           <a class="highlight" href="#projects/retort">Retort</a>
           <small> // </small>
           <a class="highlight" href="#projects/deskly">Deskly</a>

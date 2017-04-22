@@ -27,10 +27,6 @@ a, a:visited, a:hover, a:active {
     background: #d1d1d1;
 }
 
-div.fp-controlArrow.fp-prev, div.fp-controlArrow.fp-next {
-    font-size: 40%;
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Oswald', sans-serif;
   color: #ffffff;
@@ -53,4 +49,10 @@ small {
   padding: 0em 0.2em;
   font-size: 150%;
   color: inherit;
+}
+
+.fp-controlArrow {
+  padding: 0em 2.8em;
+  width: 1em;
+  height: 1em;
 }
