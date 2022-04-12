@@ -1,144 +1,177 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <title>Kaioru</title>
-  <meta charset="UTF-8">
-  <meta name="author" content="Kaioru">
-  <meta name="description" content="Kaioru's Portfolio Page">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.css" integrity="sha256-r2glH03VUY1R1G+7PwWdfL/NaTKpbInwaZFGiohbo4A=" crossorigin="anonymous" />
+  <!-- Site Properties -->
+  <title>Hey I'm Keith!</title>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/timeline.css">
-  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+  <style type="text/css">
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.js" integrity="sha256-r80qU2FgO31x7HtK2BQxYOQxPb45x+eKKhzA0OrepyM=" crossorigin="anonymous"></script>
+    .hidden.menu {
+      display: none;
+    }
+
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }
+
+
+  </style>
+
   <script>
-    $(document).ready(function() {
-      $('#pages').fullpage({
-        anchors: ['about', 'projects', 'education'],
-        lazyLoading: false,
-        controlArrows: true,
-        scrollingSpeed: 500,
-        navigation: true
-      });
+  $(document)
+    .ready(function() {
 
-      $('.fp-controlArrow').addClass('hidden-sm-down');
-    });
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+    })
+  ;
   </script>
 </head>
-
 <body>
-  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-bottom">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#projects">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#education">Education</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
 
-  <div id="pages">
-    <div data-menuanchor="about" class="intro section">
-      <div class="container">
-        <div class="col-md-8">
-          <h1 class="display-1">Kaioru <small class="hidden-md-down">aka Keith</small><small class="hidden-lg-up" style="font-size: 20%">aka Keith</small></h1>
-          <hr />
-          <p>
-            <span class="highlight">Hi.</span> I'm a student and freelancer in
-            <span class="highlight">Singapore.</span> I've worked with multiple languages such as
-            <span class="highlight">Java, PHP and SQL</span> and also have experience in creating
-            <span class="highlight">Desktop and Cloud applications.</span>
-          </p>
-          <a href="https://github.com/kaioru" target="_blank"><i class="fa fa-2x fa-github" aria-hidden="true"></i></a>
-          <a href="http://blog.kaioru.co" target="_blank"><i class="fa fa-2x fa-tumblr" aria-hidden="true"></i></a>
-          <a href="http://steamcommunity.com/id/Keifoo/" target="_blank"><i class="fa fa-2x fa-steam" aria-hidden="true"></i></a>
-          <a href="mxxaxixlxxxtxxxox:xxxx/xxx/xxxxxxxxxkxxexxixxtxhxxxx@xxkxxaxxixxxxoxruxxxxx.xxcxxxox" onmouseover="this.href=this.href.replace(/x/g,'');" target="_blank"><i class="fa fa-2x fa-envelope" aria-hidden="true"></i></a>
+
+<!-- Page Contents -->
+<div class="pusher">
+
+  <div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="eight wide column">
+          <h3 class="ui header">Hey I'm Keith!</h3>
+          <p>..trust me, I'm a software engineer. I build cool solutions out of your ideas!</p>
         </div>
-      </div>
-    </div>
-    <div data-menuanchor="projects" class="section">
-      <div class="slide">
-        <div class="text-center">
-          <h1 class="display-1">Projects</h1>
-          <p class="hidden-sm-down">Use the <i class="fa fa-caret-left" aria-hidden="true"></i> and <i class="fa fa-caret-right" aria-hidden="true"></i> keys to navigate.</p>
-          <p class="hidden-md-up">Swipe left or right to navigate.</p>
-          <a class="highlight" href="#projects/retort">Retort</a>
-          <small> // </small>
-          <a class="highlight" href="#projects/deskly">Deskly</a>
+        <div class="six wide right floated column">
+          <img src="img/avatar.png" class="ui large rounded image">
         </div>
-      </div>
-      <div data-anchor="retort" class="slide">
-        <div class="container col-md-8">
-          <h1>Retort <small>Java</small></h1>
-          <p>A text command API I wrote in Kotlin to <span class="highlight">easilly write and execute commands.</span> The standard way of having a long if-else statement to check for commands wasn't organized. Therefore, I wrote this API to <span class="highlight">streamline and standardize</span>            creating commands.</p>
-          <p>There is also multiple implementations (<a class="highlight" target="_blank" href="https://github.com/kaioru/avoid">avoid</a>, <a class="highlight" target="_blank" href="https://github.com/kaioru/distort">distort</a>) and ports (<a class="highlight" target="_blank" href="https://github.com/kaioru/Retort.Net">Retort.Net</a>) of this project.</a></p>
-          <hr />
-          <a class="highlight" target="_blank" href="https://github.com/kaioru/retort">View on Github</a>
-        </div>
-      </div>
-      <div data-anchor="deskly" class="slide">
-        <div class="container col-md-8">
-          <h1>Deskly <small>Swift, C#</small></h1>
-          <p>After having the same desktop image for so long, I got bored and had to change it. But finding images for my desktop feels like a chore everytime I do it. Which is why I wrote Deskly, a <span class="highlight">random desktop image changer</span>            that pulls images from selected Subreddits on Reddit.</p>
-          <p>I collaborated with <a class="highlight" target="_blank" href="https://github.com/ddolpali">@ddolpali</a> to create the Windows port of the application and various new features.</p>
-          <hr />
-          <a class="highlight" target="_blank" href="https://github.com/deskly">View on Github</a>
-          <small> // </small>
-          <a class="highlight" target="_blank" href="https://deskly.github.io">View on Project Page</a>
-        </div>
-      </div>
-    </div>
-    <div data-menuanchor="education" class="section">
-      <div class="container">
-        <h1 class="display-1">Education</h1>
-        <ul class="hidden-md-down timeline timeline-horizontal">
-          <li class="timeline-item">
-            <div class="timeline-badge primary"></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h1 class="timeline-title">Institution of Technical Education</h4>
-                <div class="timeline-body">
-									<p>2015-2016 <small>//</small> NITEC in Infocomm-Technology (NSA)</p>
-								</div>
-              </div>
-            </div>
-          </li>
-          <li class="timeline-item">
-            <div class="timeline-badge primary"></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h1 class="timeline-title">Ngee Ann Polytechnic</h4>
-              </div>
-              <div class="timeline-body">
-                <p>2017-current <small>//</small> Diploma in Information Technology</p>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <div class="hidden-lg-up">
-          <hr />
-          <h2>Institution of Technical Education</h2>
-          <p>2015-2016 <small>//</small> NITEC in Infocomm-Technology (NSA)</p>
-          <h2>Ngee Ann Polytechnic</h2>
-          <p>2017-current <small>//</small> Diploma in Information Technology</p>
+
+        <div class="row">
+          <div class="center aligned column">
+            <a class="ui small button" href="https://github.com/kaioru" target="_blank">
+              <i class="fa fa-2x fa-github" aria-hidden="true"></i>
+            </a>
+            <a class="ui small button" href="mxxaxixlxxxtxxxox:xxxx/xxx/xxxxxxxxxkxxexxixxtxhxxxx@xxkxxaxxixxxxoxruxxxxx.xxcxxxox" onmouseover="this.href=this.href.replace(/x/g,'');" target="_blank">
+              <i class="fa fa-2x fa-envelope" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="seven wide column">
+          <h4 class="ui inverted header">made with ♥ by me!</h4>
+          <p>they say a good footer helps re-engage readers. so here's me saying a big thank you for looking at my space!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
+
+</html>
+
