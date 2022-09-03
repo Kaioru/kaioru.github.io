@@ -15,8 +15,9 @@
 
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
 
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
   <style type="text/css">
     .hidden.menu {
@@ -163,48 +164,93 @@
           <div class="six wide right floated column">
             <img src="img/avatar.png" class="ui large rounded image">
           </div>
+        </div>
 
-          <div class="row">
-            <div class="center aligned column">
-              <a class="ui small button" href="https://github.com/kaioru" target="_blank">
-                <i class="fa fa-2x fa-github" aria-hidden="true"></i>
-              </a>
-              <a class="ui small button"
-                href="mxxaxixlxxxtxxxox:xxxx/xxx/xxxxxxxxxkxxexxixxtxhxxxx@xxkxxaxxixxxxoxruxxxxx.xxcxxxox"
-                onmouseover="this.href=this.href.replace(/x/g,'');" target="_blank">
-                <i class="fa fa-2x fa-envelope" aria-hidden="true"></i>
-              </a>
-            </div>
+        <div class="row">
+          <div class="left aligned column">
+            <a class="ui small button" href="https://github.com/kaioru" target="_blank">
+              <i class="fa fa-2x fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+            <a class="ui small button" href="https://blog.kaioru.co" target="_blank">
+              <i class="fa fa-2x fa-blog" aria-hidden="true"></i>
+            </a>
+            <a class="ui small button"
+              href="mxxaxixlxxxtxxxox:xxxx/xxx/xxxxxxxxxkxxexxixxtxhxxxx@xxkxxaxxixxxxoxruxxxxx.xxcxxxox"
+              onmouseover="this.href=this.href.replace(/x/g,'');" target="_blank">
+              <i class="fa fa-2x fa-envelope" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui vertical stripe segment inverted">
+      <div class="ui middle aligned stackable grid container">
+        <div class="row">
+          <div class="twelve wide column">
+            <h3 class="ui header inverted">FB Dropshipper</h3>
+            <p><a class="ui inverted" href="https://www.fbdropshipper.com" target="_blank">FB Dropshipper</a> is a
+              Facebook Marketplace
+              dropshipping platform that manages and automates syncing of data from suppliers such as Amazon to
+              Facebook Marketplaces built with Ruby on Rails.</p>
+            <p>For this project, I've worked on several key features:</p>
+
+            <ul>
+              <li>Asynchronous jobs for parallel processing for tasks such as importing of product data from Amazon</li>
+              <li>Stripe integration for subscriptions and purchasing of tokens</li>
+              <li>Realtime notifications with Pusher</li>
+              <li>..and more!</li>
+            </ul>
+          </div>
+          <div class="two wide right floated column">
+            <img src="img/fb-dropshipper-logo-dark.png" class="ui large rounded image">
+          </div>
+        </div>
+
+
+        <div class="center aligned row">
+          <div class="wide column">
+            <div class="ui divider"></div>
+          </div>
+        </div>
+
+        <div class="center aligned row">
+          <div class="wide column">
+            <h4 class="ui large header inverted">"Always a pleasure working with Keith. He has helped us for several
+              years on numerous projects and never fails to disappoint. His extensive knowledge of programming and best
+              software development practices makes him an excellent engineer for any team."</h4>
+            <p>
+              <img src="https://avatars.githubusercontent.com/u/42521470?v=4" class="ui avatar image"> <b>Brian
+                Heo</b>,
+              Founder FB Dropshipper
+            </p>
           </div>
         </div>
       </div>
     </div>
 
     <div class="ui vertical stripe segment">
-
       <div class="ui middle aligned stackable grid container">
         <div class="row">
-          <h2 class="ui header">Projects</h2>
-        </div>
-        <div class="row">
-          <p>I've been working on some projects that reverse engineer and re-implements a certain 2d mushroom game,
-            check em' out!</p>
-        </div>
-        <div class="row">
-          <ul>
-            <li>
-              <p><a href="https://github.com/Kaioru/Edelstein" target="_blank">Edelstein</a>
-                — the project that started it all! a re-implementation of 2d mushroom game server</p>
-            </li>
-            <li>
-              <p><a href="https://github.com/Kaioru/Foothold" target="_blank">Foothold</a>
-                — experiments, tests, and benchmarks of spatial geometric structures</p>
-            </li>
-            <li>
-              <p><a href="https://github.com/Kaioru/Duey" target="_blank">Duey</a>
-                — a very efficient parser for a very efficient node-tree file format</p>
-            </li>
-          </ul>
+          <div class="wide column">
+            <h3 class="ui header">Edelstein and friends</h3>
+            <p>I've been working on some passion projects that reverse engineer and re-implements a certain 2d mushroom
+              game, check em' out!</p>
+            <ul>
+              <li>
+                <p><a href="https://github.com/Kaioru/Edelstein" target="_blank">Edelstein</a>
+                  — the project that started it all! a re-implementation of 2d mushroom game server</p>
+              </li>
+              <li>
+                <p><a href="https://github.com/Kaioru/Foothold" target="_blank">Foothold</a>
+                  — experiments, tests, and benchmarks of spatial geometric structures</p>
+              </li>
+              <li>
+                <p><a href="https://github.com/Kaioru/Duey" target="_blank">Duey</a>
+                  — a very efficient parser for a very efficient node-tree file format</p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
