@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Box, VStack, Heading, Image, Show, Hide } from '@chakra-ui/react'
+import { Box, VStack, Heading, Image, Show, Hide, useColorModeValue } from '@chakra-ui/react'
 import Hero from './Hero';
 
 type Props = {
@@ -9,6 +9,9 @@ type Props = {
 }
 
 function HeroIntroduction({ title, avatar, children }: Props) {
+  const bgGradientStart = useColorModeValue('green.600', 'green.200')
+  const bgGradientEnd = useColorModeValue('blue.800', 'blue.400')
+
   return (
     <>
       <Hero>
@@ -19,7 +22,8 @@ function HeroIntroduction({ title, avatar, children }: Props) {
             <Heading
               as='h1'
               size='3xl'
-              bgGradient='linear(to-r, green.800, blue.900)'
+              pb={1}
+              bgGradient={`linear(to-r, ${bgGradientStart}, ${bgGradientEnd})`}
               bgClip='text'
             >
               {title}
@@ -33,7 +37,8 @@ function HeroIntroduction({ title, avatar, children }: Props) {
             <Heading
               as='h1'
               size='3xl'
-              bgGradient='linear(to-r, green.800, blue.900)'
+              pb={2}
+              bgGradient={`linear(to-r, ${bgGradientStart}, ${bgGradientEnd})`}
               bgClip='text'
             >
               {title}
