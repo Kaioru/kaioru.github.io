@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
-import { Box, VStack, Heading, Image, Show, Hide, useColorModeValue } from '@chakra-ui/react'
+import { Box, VStack, Heading, Image, Show, Hide, useColorModeValue, useToken } from '@chakra-ui/react'
+import { Typewriter } from 'react-simple-typewriter'
 import Hero from './Hero';
 
 type Props = {
@@ -11,6 +12,10 @@ type Props = {
 function HeroIntroduction({ title, avatar, children }: Props) {
   const bgGradientStart = useColorModeValue('green.600', 'green.200')
   const bgGradientEnd = useColorModeValue('blue.800', 'blue.400')
+  const [bgGradientEndToken] = useToken(
+    'colors',
+    [bgGradientEnd]
+  )
 
   return (
     <>
@@ -26,7 +31,12 @@ function HeroIntroduction({ title, avatar, children }: Props) {
               bgGradient={`linear(to-r, ${bgGradientStart}, ${bgGradientEnd})`}
               bgClip='text'
             >
-              {title}
+              <Typewriter
+                words={[title]}
+                cursor
+                cursorStyle='_'
+                cursorColor={bgGradientEndToken}
+              />
             </Heading>
             {children}
           </VStack>
@@ -37,11 +47,17 @@ function HeroIntroduction({ title, avatar, children }: Props) {
             <Heading
               as='h1'
               size='3xl'
+              minWidth={450}
               pb={2}
               bgGradient={`linear(to-r, ${bgGradientStart}, ${bgGradientEnd})`}
               bgClip='text'
             >
-              {title}
+              <Typewriter
+                words={[title]}
+                cursor
+                cursorStyle='_'
+                cursorColor={bgGradientEndToken}
+              />
             </Heading>
             {children}
           </Box>
