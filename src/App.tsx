@@ -1,4 +1,4 @@
-import { HStack, Box, Text, Link, Button, useColorMode } from '@chakra-ui/react'
+import { HStack, Box, Text, Link, IconButton, Button, useColorMode } from '@chakra-ui/react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdOutlineEmail, MdLightMode, MdDarkMode } from 'react-icons/md';
 import HeroIntroduction from './components/HeroIntroduction'
@@ -9,6 +9,24 @@ function App() {
 
   return (
     <>
+      <IconButton
+        onClick={toggleColorMode}
+        isRound={true}
+        icon={
+          colorMode == 'dark'
+            ? <MdLightMode />
+            : <MdDarkMode />
+        }
+        aria-label={
+          colorMode == 'dark'
+            ? 'Light Mode'
+            : 'Dark Mode'
+        }
+        position='fixed'
+        bottom={8}
+        right={8}
+      />
+
       <HeroIntroduction title="Hey, I'm Keith!" avatar={avatarUrl}>
         <Text fontSize='xl'>
           I build cool solutions out of your ideas!
@@ -29,13 +47,6 @@ function App() {
           <Link href='mailto://keith@kaioru.co' isExternal={true}>
             <Button leftIcon={<MdOutlineEmail />}>Email</Button>
           </Link>
-          <Button onClick={toggleColorMode} >
-            {
-              colorMode == 'dark'
-                ? <MdLightMode />
-                : <MdDarkMode />
-            }
-          </Button>
         </HStack>
       </HeroIntroduction>
     </>
